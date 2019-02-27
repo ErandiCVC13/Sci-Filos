@@ -1,4 +1,5 @@
-const moviesSciFi = document.getElementById('movies-sci-fi');
+
+const movieSciFi = document.getElementById('movies-sci-fi');
 
 
 const imbId = ['tt0816692','tt0190601', 'tt0083658', 'tt1454468', 'tt0499549',
@@ -7,6 +8,7 @@ const imbId = ['tt0816692','tt0190601', 'tt0083658', 'tt1454468', 'tt0499549',
               ];
 
 
+let dataMovieList;
 
 const dataMovie = () => {
  for (let i=0; i<imbId.length; i++) {
@@ -14,7 +16,7 @@ const dataMovie = () => {
     .then (response => response.json())
     .then (data => {
     dataMovieList = data;
-    console.log (dataMovieList)
+    printMovies(dataMovieList);
     })
   } 
 };
@@ -23,21 +25,12 @@ dataMovie();
 
 
 
-
-
-// const printMovies = (movie) => {
-//     let nameMovies = `<div class="divMovie">
-//         <div class="data"><h5># ${movie.id}</h5><img id="${movie.id}" src="${movie.img}"><p>${movie.name}</p>
-//       </div>
-//     </div>`;
-//     moviesSciF.insertAdjacentHTML("beforeend", nameMovies);
-//   };
+const printMovies = () => {
+    let nameMovies =
+    `<div class="data"><h5>#${dataMovieList.Title}</h5><p>${dataMovieList.Year}</p>
+    </div>`;
+    movieSciFi.insertAdjacentHTML("beforeend", nameMovies);
+  };
+   
   
-//   //Show List Data
-//   const showList = (moviesList) => {
-//     movies.innerHTML = "";
-//     moviesList.forEach(element => {
-//       printMovies(element);
-//     });
-//   };
 
