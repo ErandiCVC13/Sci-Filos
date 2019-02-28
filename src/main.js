@@ -11,7 +11,7 @@ let dataMovieList = [];
 
 const dataMovie = () => {
  for (let i=0; i<imbId.length; i++) {
-    fetch ('http://www.omdbapi.com/?i=' + imbId[i] +'&apikey=333f998f' )
+    fetch ('https://www.omdbapi.com/?i=' + imbId[i] +'&apikey=333f998f' )
     .then (response => response.json())
     .then (data => {
     dataMovieList.push(data);
