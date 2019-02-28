@@ -1,6 +1,10 @@
 window.data = {
 
-
+    filterByConside: (data, letterValue) => {
+        alert("HOLA")
+        const searConside = data.filter(data => (data.Title.toLowerCase().match(letterValue.toLowerCase())));
+        return searConside;
+      }
 
 
 

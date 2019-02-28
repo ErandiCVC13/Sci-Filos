@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Potra;
+    font-style: normal;
+    font-weight: normal;
+    src: url(../src/assets/fonts/Potra.ttf);
+  }
+
+  body{
+      font-family:Potra; 
+  }
