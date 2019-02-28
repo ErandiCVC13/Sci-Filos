@@ -1,4 +1,3 @@
-
 const movieSciFi = document.getElementById('movies-sci-fi');
 const searchLett = document.getElementById("search");
 
@@ -8,16 +7,15 @@ const imbId = ['tt0816692', 'tt0083658', 'tt1454468', 'tt0499549',
               ];
 
 
-let dataMovieList;
+let dataMovieList = [];
 
 const dataMovie = () => {
  for (let i=0; i<imbId.length; i++) {
     fetch ('http://www.omdbapi.com/?i=' + imbId[i] +'&apikey=333f998f' )
     .then (response => response.json())
     .then (data => {
-    dataMovieList = data;
+    dataMovieList.push(data);
     printMovies(dataMovieList);
-    console.log(dataMovieList)
     })
   } 
 };
@@ -25,10 +23,14 @@ const dataMovie = () => {
 dataMovie();
 
 const printMovies = () => {
+  movieSciFi.innerHTML="";
+
+  dataMovieList.forEach(dataMovieList => {
     let nameMovies =
     `<div class="data"><h5>${dataMovieList.Title}</h5><p>${dataMovieList.Year}</p><img id="${dataMovieList.Title}" src="${dataMovieList.Poster}">
     </div>`;
     movieSciFi.insertAdjacentHTML("beforeend", nameMovies);
+  })
   };
    
   const filterCoincidence = () => {
@@ -39,4 +41,3 @@ const printMovies = () => {
   }
 
   filterCoincidence(dataMovieList);
-
