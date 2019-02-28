@@ -1,6 +1,6 @@
 
 const movieSciFi = document.getElementById('movies-sci-fi');
-
+const searchLett = document.getElementById("search");
 
 const imbId = ['tt0816692', 'tt0083658', 'tt1454468', 'tt0499549',
                 'tt0106062', 'tt0079501', 'tt0796366', 'tt0888496',
@@ -17,13 +17,12 @@ const dataMovie = () => {
     .then (data => {
     dataMovieList = data;
     printMovies(dataMovieList);
+    console.log(dataMovieList)
     })
   } 
 };
 
 dataMovie();
-
-
 
 const printMovies = () => {
     let nameMovies =
@@ -32,5 +31,12 @@ const printMovies = () => {
     movieSciFi.insertAdjacentHTML("beforeend", nameMovies);
   };
    
-  
+  const filterCoincidence = () => {
+    searchLett.addEventListener("keyup", () => {
+      let searchValue = document.getElementById("search").value;
+      printMovies(window.data.filterByConsid(dataMovieList, searchValue));
+    });
+  }
+
+  filterCoincidence(dataMovieList);
 
