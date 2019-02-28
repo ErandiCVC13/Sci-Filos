@@ -2,8 +2,8 @@
 const movieSciFi = document.getElementById('movies-sci-fi');
 
 
-const imbId = ['tt0816692','tt0190601', 'tt0083658', 'tt1454468', 'tt0499549',
-                'tt0138396', 'tt0106062', 'tt0079501', 'tt0796366', 'tt0888496',
+const imbId = ['tt0816692', 'tt0083658', 'tt1454468', 'tt0499549',
+                'tt0106062', 'tt0079501', 'tt0796366', 'tt0888496',
                 'tt0084827', 'tt0088763', 'tt0078748', 'tt3188542', 'tt2087752',
               ];
 
@@ -27,7 +27,7 @@ dataMovie();
 
 const printMovies = () => {
     let nameMovies =
-    `<div class="data"><h5>#${dataMovieList.Title}</h5><p>${dataMovieList.Year}</p>
+    `<div class="data"><h5>${dataMovieList.Title}</h5><p>${dataMovieList.Year}</p><img id="${dataMovieList.Title}" src="${dataMovieList.Poster}">
     </div>`;
     movieSciFi.insertAdjacentHTML("beforeend", nameMovies);
   };
