@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
     <title>Sci-Filos</title>
   </head>
@@ -16,7 +17,7 @@
       </header>
 
       <!-- Sección que contiene el inicio con la recomendación del día -->
-      <section class="recommendation">
+      <section class="recommendation" id="recommendation">
         <h2>RECOMENDACIÓN DEL DÍA</h2>
         <h6>ARRIVAL</h6>
         <figure>
@@ -30,7 +31,7 @@
       </section>
 
       <!-- Sección que contiene el top 10 -->
-      <section class="top">
+      <section class="top" id="top">
         <h2>TOP 10</h2>
         <figure>
           <img src="topUno.png" alt="Sci-Filos" class="">
@@ -68,7 +69,7 @@
 
 
   <!-- Sección que contiene la sinopsis y ficha técnica del top 10 -->
-      <section class="details">
+      <section class="details" id="details">
         <h2>GATTACA</h2>
         <figure>
           <img src="topCuatro.png" alt="Sci-Filos" class="">
@@ -91,7 +92,7 @@
       </section>
 
       <!-- Sección que contiene los estrenos -->
-          <section class="new">
+          <section class="new" id="new">
             <h2>PRÓXIMAMENTE</h2>
             <figure>
               <img src="prox.png" alt="Sci-Filos" class="">
@@ -122,10 +123,16 @@
 
 
       <section id="movies-sci-fi">
-
       </section>
-<footer>
 
+<footer>
+  <nav class="menu">
+      <ul class="menu_list">
+        <li><a href="#recommendation" class="nav__item current">INICIO</a></li>
+        <li><a href="#top" class="nav__item">TOP</a></li>
+        <li><a href="#new" class="nav__item">PRÓXIMAMENTE</a></li>
+      </ul>
+  </nav>
 </footer>
   </div>
     <script src="main.js"></script>
